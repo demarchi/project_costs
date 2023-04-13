@@ -1,0 +1,11 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75px;
+    background-color: #CCC;
+}
+
+.navbar a{
+    margin: 0 10px;
+}
