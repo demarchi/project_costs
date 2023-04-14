@@ -1,8 +1,42 @@
 .footer {
     display: flex;
     min-height: 60px;
-    background-color: #CCC;
+    background-color: #222;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.footer img{
+    scale: 50%;
+}
+
+.footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer ul li{
+    margin: 0 1em;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.footer ul li:hover{
+    color: #FB3;
+}
+
+.footer p {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #FFF;
+}
+
+.footer p span {
+    color: #FB3;
 }
