@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectForm from '../Project/ProjectForm'
+import ProjectForm from '../project/ProjectForm'
 
 import styles from './NewProject.module.css'
 
