@@ -4,7 +4,26 @@ import Input from '../form/Input'
 import Select from '../form/Select'
 import LinkButton from '../layout/LinkButton'
 
+import { useState, useEffect } from 'react'
+
 function ProjectForm({ btnText }) {
+
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    fetch( "http://localhost:5000/categories", {
+      method: "GET",
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      setCategories(data)
+    })
+    .catch((err) => console.log(err))
+  }, [])
+
   return (
     <form className={styles.form}>
         <Input 
@@ -19,7 +38,11 @@ function ProjectForm({ btnText }) {
             name='budget'
             placeholder='Insira o orçamento do Projeto'
         />
-        <Select name='category_id' text='Selecione a categoria' />
+        <Select 
+          name='category_id' 
+          text='Selecione a categoria' 
+          options={categories}
+        />
         <LinkButton text={btnText} to='/' />
     </form>
   )
